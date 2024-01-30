@@ -40,6 +40,10 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
+			if (format[i + 1] == '\0')
+			{
+				count += _putchar('%');
+			}
 		}
 		else
 		{
