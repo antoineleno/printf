@@ -39,10 +39,10 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 				}
-			}
-			if (format[i + 1] == '\0')
-			{
-				count += _putchar('%');
+				else
+				{
+					break;
+				}
 			}
 		}
 		else
