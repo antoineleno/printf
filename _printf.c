@@ -43,6 +43,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			count += write(1, &format[i], 1);
+			break;
 		}
 	}
 	va_end(list_of_argument);

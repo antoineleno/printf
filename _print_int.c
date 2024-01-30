@@ -12,12 +12,7 @@ int prt_i(char *buffer, va_list list_of_argument)
 	int n = va_arg(list_of_argument, int);
 
 	int length = sprintf(buffer, "%d", n);
-
-	if (length == 0)
-	{
-		_putchar('\n');
-		return (0);
-	}
+	
 	if (length < 0)
 	{
 		return (-1);
