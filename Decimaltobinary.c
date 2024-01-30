@@ -9,6 +9,11 @@
 
 int prt_b(char *buffer, va_list list_of_argument)
 {
+	buffer = malloc(buffersize * sizeof(char));
+	if (buffer == NULL)
+	{
+		return (-1);
+	}
 	unsigned int number = va_arg(list_of_argument, unsigned int);
 	char temp;
 	unsigned int j, i;
