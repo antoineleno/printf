@@ -34,7 +34,6 @@ int _print_root13(char *buffer, va_list list_of_argument)
 			buffer[i] = string[i];
 		}
 	}
-	buffer[i] = '\0';
 	count += write(1, buffer, _strlen(buffer));
 	return (count);
 }
