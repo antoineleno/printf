@@ -13,8 +13,9 @@ int prt_i(char *buffer, va_list list_of_argument)
 	int i = 1;
 	int exp = 1;
 
-	n = n / 10;
 	remainder = n % 10;
+	n = n / 10;
+	
 	number = n;
 
 	if (remainder < 0)
