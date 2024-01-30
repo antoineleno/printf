@@ -9,12 +9,13 @@
 
 int prt_b(char *buffer, va_list list_of_argument)
 {
-	buffer = malloc(buffersize * sizeof(char));
+	
 	unsigned int number = va_arg(list_of_argument, unsigned int);
 	char temp;
 	unsigned int j, i;
 	unsigned int length = 0;
 
+	buffer = malloc(buffersize * sizeof(char));
 	while (number > 0)
 	{
 		buffer[length++] = number % 2 + '0';
