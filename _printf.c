@@ -10,10 +10,6 @@ int _printf(const char *format, ...)
 	size_t i, j;
 	int count = 0;
 	char *buffer = (char *)malloc(buffersize * sizeof(char));
-	if (buffer == NULL)
-	{
-		return (0);
-	}
 
 	fmt_t fmt_types[] = {
 		{'s', prt_s}, {'c', prt_c}, {'d', prt_i}, {'i', prt_i}, {'p', prt_p},
@@ -21,6 +17,10 @@ int _printf(const char *format, ...)
 		{'x', prt_hx_x}, {'X', prt_hx_X}, {'S', _print_ascii_S}, {'R', _print_root13}
 	};
 	va_list list_of_argument;
+		if (buffer == NULL)
+	{
+		return (0);
+	}
 
 	va_start(list_of_argument, format);
 	if (format == NULL)
