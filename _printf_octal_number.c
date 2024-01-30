@@ -10,9 +10,8 @@
 int prt_o(char *buffer, va_list list_of_argument)
 {
 	int number = va_arg(list_of_argument, int);
-	buffer = malloc(20*sizeof(char));
-	
+
 	sprintf(buffer, "%o", number);
-	write(1, buffer, sizeof(buffer));
+	write(1, buffer, 20);
 	return (20);
 }
