@@ -12,6 +12,7 @@ int prt_per(char *buffer, va_list list_of_argument)
 	char c = va_arg(list_of_argument, int);
 
 	buffer[0] = '%';
-	_putchar(37);
+	c = '%';
+	_putchar(c);
 	return (1);
 }
