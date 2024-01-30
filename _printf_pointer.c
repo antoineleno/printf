@@ -25,7 +25,7 @@ int prt_p(char *buffer, va_list list_of_argument)
 
 int _printf_hexadcimal_x_pointer(char *buffer, unsigned long int number)
 {
-	unsigned long int remainder = 0;
+	unsigned long int remainder = 0, i;
 	unsigned long int length = 0, m;
 	char tmp;
 
@@ -58,5 +58,10 @@ int _printf_hexadcimal_x_pointer(char *buffer, unsigned long int number)
 		buffer[m] = buffer[length - m - 1];
 		buffer[length - m - 1] = tmp;
 	}
-	return (write(1, buffer, strlen(buffer)));
+	
+	for (i = 0; i < length; i++)
+	{
+		_putchar(buffer[i]);
+	}
+	return (length);
 }
