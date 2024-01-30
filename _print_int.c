@@ -9,25 +9,20 @@
 
 int prt_i(char  *buffer, va_list list_of_argument)
 {
-	int number = va_arg(list_of_argument, int);
-	int length = 0, count = 0, isnegative = 0, i;
+	int number;
+	int length = 0, count = 0, isnegative, i;
 	char temporarybuffer;
 
-	if (number < 0)
-	{
-		isnegative = 1;
-		number = -number;
-	}
+	number = va_arg(list_of_argument, int);
+	isnegative = (number < 0);
+
 
 	do {
 		buffer[length++] = number % 10 + '0';
 		number = number / 10;
 
 	} while (number > 0);
-	if (length > 10)
-	{
-		return (-1);
-	}
+
 	if (isnegative)
 	{
 		buffer[length++] = '-';
