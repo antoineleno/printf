@@ -43,7 +43,6 @@ int prt_hx_x(char *buffer, va_list list_of_argument)
 		buffer[length - m - 1] = tmp;
 	}
 
-	buffer[length++] = '\0';
 	return (write(1, buffer, _strlen(buffer)));
 }
 

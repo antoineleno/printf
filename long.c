@@ -121,7 +121,6 @@ long int print_l_x(long int hexadecimal_number)
 		buffer[length - m - 1] = tmp;
 	}
 
-	buffer[length++] = '\0';
 	return (write(1, buffer, _strlen(buffer)));
 }
 
@@ -167,7 +166,6 @@ long int _printf_l_X(long int hexadecimal_number)
 		buffer[length - m - 1] = tmp;
 	}
 
-	buffer[length++] = '\0';
 	return (write(1, buffer, _strlen(buffer)));
 }
 

@@ -37,7 +37,6 @@ short int print_h_i(short int number)
 		buffer[i] = buffer[length - i - 1];
 		buffer[length - i - 1] = temporarybuffer;
 	}
-	buffer[length++] = '\0';
 	count += write(1, buffer, length);
 	return (count);
 }

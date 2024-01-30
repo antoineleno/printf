@@ -32,7 +32,6 @@ int prt_u_i(char  *buffer, va_list list_of_argument)
 		buffer[length - i - 1] = temporarybuffer;
 	}
 
-	buffer[length++] = '\0';
 	count += write(1, buffer, length);
 	return (count);
 }

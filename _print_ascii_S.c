@@ -79,6 +79,5 @@ int _print_ascii_hex(char *buffer, int hexadecimal_number)
 		buffer[length - m - 1] = tmp;
 	}
 
-	buffer[length++] = '\0';
 	return (write(1, buffer, _strlen(buffer)));
 }
