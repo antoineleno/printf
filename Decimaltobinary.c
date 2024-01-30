@@ -9,7 +9,7 @@
 
 int prt_b(char *buffer, va_list list_of_argument)
 {
-	unsigned int number = va_arg(list_of_argument, unsigned int);
+	unsigned int nuclember = va_arg(list_of_argument, unsigned int);
 	char temp;
 	unsigned int j;
 	unsigned int length = 0;
