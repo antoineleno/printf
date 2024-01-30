@@ -17,15 +17,8 @@ int _printf(const char *format, ...)
 		{'x', prt_hx_x}, {'X', prt_hx_X}, {'S', _print_ascii_S}, {'R', _print_root13}
 	};
 	va_list list_of_argument;
-		if (buffer == NULL)
-	{
-		free(buffer);
-		return (0);
-	}
 
 	va_start(list_of_argument, format);
-	if (format == NULL)
-	return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
