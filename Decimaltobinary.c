@@ -2,40 +2,34 @@
 
 /**
  * prt_b - Function to convert a decimal number to binary number.
- * @buffer: Buffer to store the binary representation.
+ * @buffer: Buffer to store the number of character printed
  * @list_of_argument: Argument to pass while printing.
- * Return: The number of characters in the binary representation.
- */
+ * Return: The binary number
+*/
+
 int prt_b(char *buffer, va_list list_of_argument)
 {
 	unsigned int number = va_arg(list_of_argument, unsigned int);
-	unsigned int temp;
-	unsigned int i, j;
+	char temp;
+	unsigned int j;
 	unsigned int length = 0;
 
-	if (number == 0)
+	while (number > 0)
+	{
+		buffer[length++] = number % 2 + '0';
+		number = number / 2;
+	}
+
+	if (length == 0)
 	{
 		buffer[length++] = '0';
 	}
-	else
+
+	for (j = 0; j < length / 2; j++)
 	{
-		while (number > 0)
-		{
-			buffer[length++] = number % 2 + '0';
-			number = number / 2;
-		}
+		temp = buffer[j];
+		buffer[j] = buffer[length - j - 1];
+		buffer[length - j - 1] = temp;
 	}
-
-	
-	for (i = 0, j = length - 1; i < j; i++, j--)
-	{
-		temp = buffer[i];
-		buffer[i] = buffer[j];
-		buffer[j] = temp;
-	}
-
-
-	buffer[length] = '\0';
-
-	return length;
+	return (write(1, buffer, _strlen(buffer)));
 }
