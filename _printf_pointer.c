@@ -10,17 +10,9 @@
 int prt_p(char *buffer, va_list list_of_argument)
 {
 	void *pointer = va_arg(list_of_argument, void *);
-	if (pointer == NULL)
-	{
-		sprintf(buffer, "%s", "(null)");
-		return (write(1, buffer, 6));
-	}
-	else
-	{
-		unsigned long new_pointer = (unsigned long)pointer;
-		return (_printf_hexadcimal_x_pointer(buffer, new_pointer));
-	}
+	unsigned long new_pointer = (unsigned long)pointer;
 
+	return (_printf_hexadcimal_x_pointer(buffer, new_pointer));
 }
 
 
@@ -33,7 +25,7 @@ int prt_p(char *buffer, va_list list_of_argument)
 
 int _printf_hexadcimal_x_pointer(char *buffer, unsigned long int number)
 {
-	unsigned long int remainder = 0, i;
+	unsigned long int remainder = 0;
 	unsigned long int length = 0, m;
 	char tmp;
 
@@ -59,7 +51,7 @@ int _printf_hexadcimal_x_pointer(char *buffer, unsigned long int number)
 		number = number / 16;
 	}
 	buffer[length++] = 'x';
-	buffer[length++] = '0';
+	buffer[length++] = 'O';
 	for (m = 0; m < length / 2; m++)
 	{
 		tmp = buffer[m];
@@ -67,9 +59,5 @@ int _printf_hexadcimal_x_pointer(char *buffer, unsigned long int number)
 		buffer[length - m - 1] = tmp;
 	}
 
-	for (i = 0; i < length; i++)
-	{
-		_putchar(buffer[i]);
-	}
-	return (length);
+	return (write(1, buffer, strlen(buffer)));
 }
