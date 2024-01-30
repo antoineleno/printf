@@ -17,11 +17,6 @@ int prt_i(char *buffer, va_list list_of_argument)
 	n = n / 10;
 	
 	number = n;
-	if (n == 0)
-	{
-		_putchar('0');
-		i++;
-	}
 
 	if (remainder < 0)
 	{
@@ -30,6 +25,11 @@ int prt_i(char *buffer, va_list list_of_argument)
 		n = -n;
 		remainder = -remainder;
 		i++;
+	}
+	if (number == 0)
+	{
+		_putchar('0');
+		return (i);
 	}
 	if (number > 0)
 	{
