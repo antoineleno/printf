@@ -11,10 +11,21 @@
 int prt_s(char *buffer, va_list list_of_argument)
 {
 	char *str;
-	int length;
+	int length, i;
 
 	str = va_arg(list_of_argument, char *);
+
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 	length = _strlen(str);
 	sprintf(buffer, "%s", str);
-	return (write(1, buffer, length));
+
+	for (i = 0; i < length; i++)
+	{
+		_putchar(buffer[i]);
+	}
+
+	return (length);
 }
