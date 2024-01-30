@@ -11,8 +11,13 @@
 int prt_c(char *buffer, va_list list_of_argument)
 {
 	char c = va_arg(list_of_argument, int);
+	int i;
 
 	sprintf(buffer, "%c", c);
-	write(1, buffer, 1);
+	for (i = 0; i < 1; i++)
+	{
+		_putchar(buffer[i]);
+	}
+	
 	return (1);
 }
