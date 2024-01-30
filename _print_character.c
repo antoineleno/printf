@@ -12,6 +12,7 @@ int prt_c(char *buffer, va_list list_of_argument)
 {
 	char c = va_arg(list_of_argument, int);
 
+	buffer = malloc(sizeof(char));
 	sprintf(buffer, "%c", c);
 	return (write(1, buffer, 1));
 }
