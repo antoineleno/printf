@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * _printf - Function like printf function in c.
  * @format: Argument of printf.
