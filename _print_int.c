@@ -15,6 +15,7 @@ int prt_i(char *buffer, va_list list_of_argument)
 	if (length == 0)
 	{
 		_putchar('\n');
+		return (0);
 	}
 	if (length < 0)
 	{
