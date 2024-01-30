@@ -41,7 +41,7 @@ long int print_l_x(long int hexadecimal_number)
 
 
 	sprintf(buffer, "%lx", hexadecimal_number);
-	return (write(1, buffer , _strlen(buffer)));
+	return (write(1, buffer, _strlen(buffer)));
 
 }
 
@@ -56,7 +56,7 @@ long int _printf_l_X(long int hexadecimal_number)
 	char buffer[20];
 
 	sprintf(buffer, "%lX", hexadecimal_number);
-	return (write(1, buffer , _strlen(buffer)));
+	return (write(1, buffer, _strlen(buffer)));
 }
 
 /**

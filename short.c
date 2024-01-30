@@ -26,7 +26,7 @@ short int _print_h_o(short int number)
 	char buffer[20];
 
 	sprintf(buffer, "%ho", number);
-	return (write(1, buffer , _strlen(buffer)));
+	return (write(1, buffer, _strlen(buffer)));
 }
 
 /**
@@ -39,7 +39,7 @@ short int print_h_x(short int hexadecimal_number)
 {
 	char buffer[20];
 
-	sprintf(buffer ,"%hx", hexadecimal_number);
+	sprintf(buffer, "%hx", hexadecimal_number);
 	return (write(1, buffer, _strlen(buffer)));
 }
 
@@ -53,7 +53,7 @@ short int _printf_h_X(short int hexadecimal_number)
 {
 	char buffer[20];
 
-	sprintf(buffer , "%hX", hexadecimal_number);
+	sprintf(buffer, "%hX", hexadecimal_number);
 	return (write(1, buffer, _strlen(buffer)));
 }
 
