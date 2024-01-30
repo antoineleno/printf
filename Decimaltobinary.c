@@ -16,6 +16,10 @@ int prt_b(char *buffer, va_list list_of_argument)
 	unsigned int length = 0;
 
 	buffer = malloc(buffersize * sizeof(char));
+	if (number == NULL)
+	{
+		return (0);
+	}
 	while (number > 0)
 	{
 		buffer[length++] = number % 2 + '0';
