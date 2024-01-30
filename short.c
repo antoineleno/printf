@@ -50,9 +50,10 @@ short int print_h_i(short int number)
 
 short int _print_h_o(short int number)
 {
-	char buffer[20];
+	char buffer[16];
 	sprintf(buffer, "%hd", number);
 	write(1, buffer, 20);
+	return (16);
 }
 
 /**
