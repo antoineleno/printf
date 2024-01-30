@@ -39,10 +39,6 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 				}
-				else
-				{
-					return (0);
-				}
 			}
 		}
 		else
