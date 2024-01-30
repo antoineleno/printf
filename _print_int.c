@@ -9,31 +9,39 @@
 
 int prt_i(char  *buffer, va_list list_of_argument)
 {
-	int number;
-	int length = 0, count = 0, isnegative, i;
-	char temporarybuffer;
+	int n, num, last, digit, exp;
+	int i = 1;
 
-	number = va_arg(list_of_argument, int);
-	isnegative = (number < 0);
+	n = va_arg(list_of_argument, int);
+	n = n / 10;
+	num = n;
 
-
-	do {
-		buffer[length++] = number % 10 + '0';
-		number = number / 10;
-
-	} while (number > 0);
-
-	if (isnegative)
+	if (last < 0)
 	{
-		buffer[length++] = '-';
+		_putchar('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-	for (i = 0; i < length / 2; i++)
+
+	if (num > 0)
 	{
-		temporarybuffer = buffer[i];
-		buffer[i] = buffer[length - i - 1];
-		buffer[length - i - 1] = temporarybuffer;
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
 	}
-	buffer[length++] = '\0';
-	count += write(1, buffer, length);
-	return (count);
+	_putchar(last + '0');
+	return (i);
 }
