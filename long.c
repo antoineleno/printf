@@ -10,8 +10,8 @@ long int print_l_i(long int number)
 {
 	char buffer[20];
 
-	sprintf(buffer, "%ld", _strlen(buffer));
-	retur (write(1, buffer, _strlen(buffer)));
+	sprintf(buffer, "%ld", number);
+	return (write(1, buffer, _strlen(buffer)));
 }
 
 
