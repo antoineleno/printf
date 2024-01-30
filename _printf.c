@@ -41,10 +41,9 @@ int _printf(const char *format, ...)
 		else
 		{
 			count += write(1, &format[i], 1);
+			break;
 		}
 	}
-	printf("%d\n", count);
-
 	va_end(list_of_argument);
 	free(buffer);
 	return (count);
