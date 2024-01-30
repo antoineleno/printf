@@ -6,44 +6,42 @@
  * @buffer: Buffer to store the character printed.
  * Return: Always the number of digits printed
 */
-
-int prt_i(char  *buffer, va_list list_of_argument)
+int prt_i(char *buffer, va_list list_of_argument)
 {
 	int n = va_arg(list_of_argument, int);
-	int num, last = n % 10, digit;
-	int  i = 1;
+	int number, last = n % 10, digit;
+	int i = 1;
 	int exp = 1;
 
 	n = n / 10;
-	num = n;
+	number = n;
 
 	if (last < 0)
 	{
 		_putchar('-');
-		num = -num;
+		number = -number;
 		n = -n;
 		last = -last;
 		i++;
 	}
-	if (num > 0)
+	if (number > 0)
 	{
-		while (num / 10 != 0)
+		while (number / 10 != 0)
 		{
 			exp = exp * 10;
-			num = num / 10;
+			number = number / 10;
 		}
-		num = n;
+		number = n;
 		while (exp > 0)
 		{
-			digit = num / exp;
+			digit = number / exp;
 			_putchar(digit + '0');
-			num = num - (digit * exp);
+			number = number - (digit * exp);
 			exp = exp / 10;
 			i++;
 		}
 	}
 	buffer[0] = '\0';
 	_putchar(last + '0');
-
 	return (i);
 }
