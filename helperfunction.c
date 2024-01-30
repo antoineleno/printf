@@ -52,7 +52,7 @@ char *_strncpy(char *dest, char *srs, int n)
 	int i = 0;
 	int j = 0;
 
-	while (j < n && srs[i] != '\0')
+	while (j < n && srs[j] != '\0')
 	{
 		dest[i] = srs[j];
 		i++;

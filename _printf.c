@@ -19,6 +19,10 @@ int _printf(const char *format, ...)
 	va_list list_of_argument;
 
 	va_start(list_of_argument, format);
+	if (format == NULL)
+	{
+		return (NULL);
+	}
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -41,7 +45,6 @@ int _printf(const char *format, ...)
 		else
 		{
 			count += write(1, &format[i], 1);
-			break;
 		}
 	}
 	va_end(list_of_argument);
