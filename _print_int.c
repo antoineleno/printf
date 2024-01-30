@@ -9,6 +9,7 @@
 */
 int prt_i(char *buffer, va_list list_of_argument)
 {
+	buffer = (char *)malloc(13* sizeof(char));
 	int n = va_arg(list_of_argument, int);
 	int length = sprintf(buffer, "%d", n);
 
