@@ -16,13 +16,8 @@ int prt_s(char *buffer, va_list list_of_argument)
 
 	length = _strlen(str);
 
-	if (length == 0)
-	{
-		_putchar('\n');
-		return (0);
-	}
 
-	else if (length >= buffersize)
+	if (length >= buffersize)
 	{
 		count += write(1, str, length);
 	}
