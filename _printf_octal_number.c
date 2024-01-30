@@ -32,7 +32,5 @@ int prt_o(char *buffer, va_list list_of_argument)
 		buffer[k] = buffer[length - k - 1];
 		buffer[length - k - 1] = tmp;
 	}
-	buffer[length++] = '\0';
-
 	return (write(1, buffer, _strlen(buffer)));
 }
