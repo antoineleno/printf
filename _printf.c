@@ -41,7 +41,8 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					return (-1);
+					count += (1, "antone %d", 12);
+					break;
 				}
 			}
 		}
