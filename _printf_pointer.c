@@ -51,7 +51,7 @@ int _printf_hexadcimal_x_pointer(char *buffer, unsigned long int number)
 		number = number / 16;
 	}
 	buffer[length++] = 'x';
-	buffer[length++] = 'O';
+	buffer[length++] = '0';
 	for (m = 0; m < length / 2; m++)
 	{
 		tmp = buffer[m];
