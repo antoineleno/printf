@@ -9,13 +9,14 @@
 
 int prt_i(char  *buffer, va_list list_of_argument)
 {
-	int n, num, last, digit, exp;
-	int i = 1;
 
-	n = va_arg(list_of_argument, int);
+	int n = va_arg(list_of_argument, int);
+	int num, last = n % 10, digit;
+	int  i = 1;
+	int exp = 1;
+
 	n = n / 10;
 	num = n;
-	last = n % 10;
 
 	if (last < 0)
 	{
@@ -25,7 +26,6 @@ int prt_i(char  *buffer, va_list list_of_argument)
 		last = -last;
 		i++;
 	}
-
 	if (num > 0)
 	{
 		while (num / 10 != 0)
