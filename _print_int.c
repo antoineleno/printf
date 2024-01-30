@@ -11,7 +11,7 @@ int prt_i(char *buffer, va_list list_of_argument)
 	int n = va_arg(list_of_argument, int);
 	int number, remainder, digit;
 	int i = 1;
-	int exp = 1;
+	int place = 1;
 
 	remainder = n % 10;
 	n = n / 10;
@@ -31,16 +31,16 @@ int prt_i(char *buffer, va_list list_of_argument)
 	{
 		while (number / 10 != 0)
 		{
-			exp = exp * 10;
+			place = place * 10;
 			number = number / 10;
 		}
 		number = n;
-		while (exp > 0)
+		while (place > 0)
 		{
-			digit = number / exp;
+			digit = number / place;
 			_putchar(digit + '0');
-			number = number - (digit * exp);
-			exp = exp / 10;
+			number = number - (digit * place);
+			place = place / 10;
 			i++;
 		}
 	}
