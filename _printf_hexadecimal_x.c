@@ -10,39 +10,8 @@
 int prt_hx_x(char *buffer, va_list list_of_argument)
 {
 	unsigned int hexadecimal_number = va_arg(list_of_argument, unsigned int);
-	unsigned int remainder = 0;
-	unsigned int length = 0, m;
-	char tmp;
 
-	if (hexadecimal_number == 0)
-	{
-		buffer[length++] = '0';
-	}
-
-	while (hexadecimal_number > 0)
-	{
-		remainder = hexadecimal_number % 16;
-		if (remainder < 10)
-		{
-			buffer[length++] = remainder + '0';
-		}
-
-		else
-		{
-			remainder = remainder - 10 + 'a';
-			buffer[length++] = remainder;
-		}
-
-		hexadecimal_number = hexadecimal_number / 16;
-	}
-
-	for (m = 0; m < length / 2; m++)
-	{
-		tmp = buffer[m];
-		buffer[m] = buffer[length - m - 1];
-		buffer[length - m - 1] = tmp;
-	}
-
-	return (write(1, buffer, _strlen(buffer)));
+	sprintf(buffer, "%x", hexadecimal_number);
+	return (write(1, buffer, 20));
 }
 
