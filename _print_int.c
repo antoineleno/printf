@@ -27,6 +27,12 @@ int prt_i(char  *buffer, va_list list_of_argument)
 	}
 	if (number > 0)
 	{
+		while (number / 10 != 0)
+		{
+			exp = exp * 10;
+			number = number / 10;
+		}
+		number = n;
 		while (exp > 0)
 		{
 			digit = number / exp;
