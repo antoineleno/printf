@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * prt_s - Function to print a string.
@@ -10,25 +11,10 @@
 int prt_s(char *buffer, va_list list_of_argument)
 {
 	char *str;
-	int count = 0, length;
-	
+	int length;
+
 	str = va_arg(list_of_argument, char *);
-
 	length = _strlen(str);
-
-
-
-	if (length >= buffersize)
-	{
-		count += write(1, str, length);
-	}
-
-	else
-	{
-		_strncpy(buffer, str, buffersize - 1);
-		count +=  write(1, buffer, length);
-	}
-
-	return (count);
+	sprintf(buffer, "%s", str);
+	return (write(1, buffer, length));
 }
-
