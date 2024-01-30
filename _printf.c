@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	va_list list_of_argument;
 
 	va_start(list_of_argument, format);
-	if (buffer == NULL)
+	if (format == NULL)
 	{
 		return (-1);
 	}
