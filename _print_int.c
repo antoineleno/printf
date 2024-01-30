@@ -10,40 +10,40 @@
 int prt_i(char  *buffer, va_list list_of_argument)
 {
 	int n = va_arg(list_of_argument, int);
-	int number, last = n % 10, digit;
-	int i = 1;
+	int num, last = n % 10, digit;
+	int  i = 1;
 	int exp = 1;
 
 	n = n / 10;
-	number = n;
+	num = n;
 
 	if (last < 0)
 	{
-		_putchar('_');
-		number = - number;
+		_putchar('-');
+		num = -num;
 		n = -n;
 		last = -last;
 		i++;
 	}
-	if (number > 0)
+	if (num > 0)
 	{
-		while (number / 10 != 0)
+		while (num / 10 != 0)
 		{
 			exp = exp * 10;
-			number = number / 10;
+			num = num / 10;
 		}
-		number = n;
+		num = n;
 		while (exp > 0)
 		{
-			digit = number / exp;
+			digit = num / exp;
 			_putchar(digit + '0');
-			number = number - (digit * exp);
+			num = num - (digit * exp);
 			exp = exp / 10;
 			i++;
 		}
 	}
-
-	_putchar(last + '0');
 	buffer[0] = '\0';
+	_putchar(last + '0');
+
 	return (i);
 }
