@@ -16,6 +16,8 @@ int prt_s(char *buffer, va_list list_of_argument)
 
 	length = _strlen(str);
 
+	buffer = malloc(length * sizeof(char));
+
 
 	if (length >= buffersize)
 	{
