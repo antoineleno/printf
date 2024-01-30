@@ -9,37 +9,9 @@
 short int print_h_i(short int number)
 {
 	char buffer[20];
-	short int length = 0, count = 0, isnegative = 0, i;
-	char temporarybuffer;
 
-	if (number < 0)
-	{
-		isnegative = 1;
-		number = -number;
-	}
-
-	do {
-		buffer[length++] = number % 10 + '0';
-		number = number / 10;
-
-	} while (number > 0);
-	if (length > 10)
-	{
-		return (-1);
-	}
-	if (isnegative)
-	{
-		buffer[length++] = '-';
-	}
-	for (i = 0; i < length / 2; i++)
-	{
-		temporarybuffer = buffer[i];
-		buffer[i] = buffer[length - i - 1];
-		buffer[length - i - 1] = temporarybuffer;
-	}
-	buffer[length++] = '\0';
-	count += write(1, buffer, length);
-	return (count);
+	sprintf(buffer, "%hd", number);
+	return (write(1, buffer, _strlen(buffer)));
 }
 
 
@@ -121,7 +93,6 @@ short int print_h_x(short int hexadecimal_number)
 		buffer[length - m - 1] = tmp;
 	}
 
-	buffer[length++] = '\0';
 	return (write(1, buffer, _strlen(buffer)));
 }
 
@@ -167,7 +138,6 @@ short int _printf_h_X(short int hexadecimal_number)
 		buffer[length - m - 1] = tmp;
 	}
 
-	buffer[length++] = '\0';
 	return (write(1, buffer, _strlen(buffer)));
 }
 
@@ -202,7 +172,6 @@ short int print_h_u_i(short int number)
 		buffer[length - i - 1] = temporarybuffer;
 	}
 
-	buffer[length++] = '\0';
 	count += write(1, buffer, length);
 	return (count);
 }

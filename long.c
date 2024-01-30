@@ -138,8 +138,6 @@ long int _printf_l_X(long int hexadecimal_number)
 		buffer[m] = buffer[length - m - 1];
 		buffer[length - m - 1] = tmp;
 	}
-
-	buffer[length++] = '\0';
 	return (write(1, buffer, _strlen(buffer)));
 }
 
