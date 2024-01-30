@@ -22,12 +22,6 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	if (buffer == NULL)
-	{
-		fee(buffer);
-		return (NULL);
-	}
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
