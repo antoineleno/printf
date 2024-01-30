@@ -12,6 +12,8 @@ int prt_o(char *buffer, va_list list_of_argument)
 	unsigned int number = va_arg(list_of_argument, int);
 	unsigned int length = 0;
 	unsigned int count = 0;
+	unsigned int k;
+	char tmp;
 
 	while (number > 0)
 	{
@@ -24,7 +26,13 @@ int prt_o(char *buffer, va_list list_of_argument)
 		return (count += _putchar('0'));
 	}
 
-	sprintf(buffer, "%o", number);
-	write(1, buffer, length);
-	return (length);
+	for (k = 0; k < length / 2; k++)
+	{
+		tmp = buffer[k];
+		buffer[k] = buffer[length - k - 1];
+		buffer[length - k - 1] = tmp;
+	}
+	buffer[length++] = '\0';
+
+	return (write(1, buffer, _strlen(buffer)));
 }
