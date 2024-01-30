@@ -10,19 +10,19 @@
 int prt_i(char *buffer, va_list list_of_argument)
 {
 	int n = va_arg(list_of_argument, int);
-	int i;
+
 	int length = sprintf(buffer, "%d", n);
 
 	if (length < 0)
 	{
 		return (-1);
 	}
+	else if (length == 0)
+	{
+		return (_putchar('0'));
+	}
 	else
 	{
-		for (i = 0; i < length; i++)
-		{
-			_putchar(buffer[i]);
-		}
+		return (write(1, buffer, length));
 	}
-	return (length);
 }
