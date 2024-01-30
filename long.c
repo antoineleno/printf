@@ -150,29 +150,7 @@ long int _printf_l_X(long int hexadecimal_number)
 unsigned long int print_l_u_i(unsigned long int number)
 {
 	char buffer[20];
-	unsigned long int length = 0, count = 0, i;
-	char temporarybuffer;
 
-
-	do {
-		buffer[length++] = number % 10 + '0';
-		number = number / 10;
-
-	} while (number > 0);
-
-	if (length > 12)
-	{
-		return (-1);
-	}
-
-	for (i = 0; i < length / 2; i++)
-	{
-		temporarybuffer = buffer[i];
-		buffer[i] = buffer[length - i - 1];
-		buffer[length - i - 1] = temporarybuffer;
-	}
-
-	buffer[length++] = '\0';
-	count += write(1, buffer, length);
-	return (count);
+	sprintf(buffer, "%lu", number);
+	return (write(1, buffer, _strlen(buffer)));
 }

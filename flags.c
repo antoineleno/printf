@@ -7,7 +7,7 @@
 */
 int flags_handling(const char *format, size_t *i)
 {
-
+	int flag = 0;
 	int count = 0;
 	size_t j;
 
@@ -19,6 +19,7 @@ int flags_handling(const char *format, size_t *i)
 			if (format[j + 1] == 'd' || format[j + 1] == 'i')
 			{
 				count += _putchar('+');
+				flag |= 1;
 			}
 			break;
 		case '#':
@@ -26,12 +27,14 @@ int flags_handling(const char *format, size_t *i)
 			{
 				count = 1 + _putchar('0');
 				format[j + 1] == 'x' ? _putchar('x') : _putchar('X');
+				flag |= (1 << 1);
 			}
 			break;
 		case ' ':
 			if (format[j + 1] == 'd' || format[j + 1] == 'i')
 			{
 				count += _putchar(' ');
+				flag |= (1 << 2);
 			}
 
 		default:
@@ -40,5 +43,5 @@ int flags_handling(const char *format, size_t *i)
 	}
 exit_loop:
 *i = j - 1;
-	return (count);
+	return (flag);
 }
