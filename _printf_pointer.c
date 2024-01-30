@@ -59,5 +59,5 @@ int _printf_hexadcimal_x_pointer(char *buffer, unsigned long int number)
 		buffer[length - m - 1] = tmp;
 	}
 
-	return (write(1, buffer, strlen(buffer) + 1));
+	return (write(1, buffer, strlen(buffer)));
 }
