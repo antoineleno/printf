@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 {
 	size_t i, j;
 	int count = 0;
-	char *buffer = (char *)malloc(buffersize * sizeof(char));
+	char *buffer;
 
 	fmt_t fmt_types[] = {
 		{'s', prt_s}, {'c', prt_c}, {'d', prt_i}, {'i', prt_i}, {'p', prt_p},
