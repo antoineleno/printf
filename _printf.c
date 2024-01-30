@@ -42,7 +42,6 @@ int _printf(const char *format, ...)
 				else
 				{
 					count += _putchar('S');
-					break;
 				}
 			}
 		}
