@@ -60,41 +60,11 @@ long int _print_l_o(long int number)
 long int print_l_x(long int hexadecimal_number)
 {
 	char buffer[20];
-	long int remainder = 0;
-	long int length = 0, m;
-	char tmp;
 
-	if (hexadecimal_number == 0)
-	{
-		buffer[length++] = '0';
-	}
 
-	while (hexadecimal_number > 0)
-	{
-		remainder = hexadecimal_number % 16;
-		if (remainder < 10)
-		{
-			buffer[length++] = remainder + '0';
-		}
+	sprintf(buffer, "%lx", hexadecimal_number);
+	return (write(1, buffer , _strlen(buffer)));
 
-		else
-		{
-			remainder = remainder - 10 + 'a';
-			buffer[length++] = remainder;
-		}
-
-		hexadecimal_number = hexadecimal_number / 16;
-	}
-
-	for (m = 0; m < length / 2; m++)
-	{
-		tmp = buffer[m];
-		buffer[m] = buffer[length - m - 1];
-		buffer[length - m - 1] = tmp;
-	}
-
-	buffer[length++] = '\0';
-	return (write(1, buffer, _strlen(buffer)));
 }
 
 /**
