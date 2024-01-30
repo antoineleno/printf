@@ -10,9 +10,17 @@
 int prt_p(char *buffer, va_list list_of_argument)
 {
 	void *pointer = va_arg(list_of_argument, void *);
-	unsigned long new_pointer = (unsigned long)pointer;
+	if (pointer == NULL)
+	{
+		sprintf(buffer, "%s", "(null)");
+		return (write(1, buffer, 6));
+	}
+	else
+	{
+		unsigned long new_pointer = (unsigned long)pointer;
+		return (_printf_hexadcimal_x_pointer(buffer, new_pointer));
+	}
 
-	return (_printf_hexadcimal_x_pointer(buffer, new_pointer));
 }
 
 
