@@ -15,6 +15,7 @@ int prt_i(char  *buffer, va_list list_of_argument)
 	n = va_arg(list_of_argument, int);
 	n = n / 10;
 	num = n;
+	last = n % 10;
 
 	if (last < 0)
 	{
@@ -43,5 +44,6 @@ int prt_i(char  *buffer, va_list list_of_argument)
 		}
 	}
 	_putchar(last + '0');
+	buffer[0] = '\0';
 	return (i);
 }
