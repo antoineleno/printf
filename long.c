@@ -24,8 +24,30 @@ long int print_l_i(long int number)
 long int _print_l_o(long int number)
 {
 	char buffer[20];
+	long int length = 0;
+	long int count = 0;
+	long int k;
+	char tmp;
 
-	sprintf(buffer, "%lo", number);
+	while (number > 0)
+	{
+		buffer[length++] = number % 8 + '0';
+		number = number / 8;
+	}
+
+	if (length == 0)
+	{
+		return (count += _putchar('0'));
+	}
+
+	for (k = 0; k < length / 2; k++)
+	{
+		tmp = buffer[k];
+		buffer[k] = buffer[length - k - 1];
+		buffer[length - k - 1] = tmp;
+	}
+	buffer[length++] = '\0';
+
 	return (write(1, buffer, _strlen(buffer)));
 }
 
