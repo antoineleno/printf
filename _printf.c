@@ -6,7 +6,7 @@
 */
 int _printf(const char *format, ...)
 {
-	size_t i = 0, j;
+	size_t i, j;
 	int count = 0;
 	char *buffer = (char *)malloc(buffersize * sizeof(char));
 
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
