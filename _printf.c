@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 	va_list list_of_argument;
 		if (buffer == NULL)
 	{
+		free(buffer);
 		return (0);
 	}
 
