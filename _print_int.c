@@ -26,11 +26,7 @@ int prt_i(char *buffer, va_list list_of_argument)
 		remainder = -remainder;
 		i++;
 	}
-	if (number == 0)
-	{
-		_putchar('0');
-		return (i);
-	}
+
 	if (number > 0)
 	{
 		while (number / 10 != 0)
