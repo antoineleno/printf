@@ -9,13 +9,11 @@
 
 int prt_c(char *buffer, va_list list_of_argument)
 {
-	int count = 0;
 	char c = va_arg(list_of_argument, int);
 
 	buffer[0] = c;
-	buffer[1] = '\0';
-	count = write(1, buffer, 2);
+	_putchar(c);
 
-	return (count);
+	return (1);
 }
 
