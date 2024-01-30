@@ -31,6 +31,7 @@ int _printf(const char *format, ...)
 			count += print_short(format, &i, list_of_argument);
 			count += width(format, &i, list_of_argument);
 			count += precision(format, &i, list_of_argument);
+			int isspecifier = 0;
 			for (j = 0; j < sizeof(fmt_types) / sizeof(fmt_types[0]); j++)
 			{
 				if (format[i + 1] == fmt_types[j].type)
@@ -39,8 +40,9 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 				}
-				else
+				if (!isspecifier)
 				{
+
 					count += _putchar('S');
 				}
 			}
