@@ -17,7 +17,7 @@ int prt_s(char *buffer, va_list list_of_argument)
 
 	if (str == NULL)
 	{
-		str = "(null)";
+		str = "\n";
 	}
 	length = _strlen(str);
 	sprintf(buffer, "%s", str);
