@@ -9,10 +9,10 @@
 
 int prt_b(char *buffer, va_list list_of_argument)
 {
-	int number = va_arg(list_of_argument, int);
+	unsigned int number = va_arg(list_of_argument, unsigned int);
 	char temp;
-	int j, i;
-	int length = 0;
+	unsigned int j, i;
+	unsigned int length = 0;
 
 	while (number > 0)
 	{
@@ -31,7 +31,6 @@ int prt_b(char *buffer, va_list list_of_argument)
 		buffer[j] = buffer[length - j - 1];
 		buffer[length - j - 1] = temp;
 	}
-
 	for (i = 0; i < length; i++)
 	{
 		_putchar(buffer[i]);
