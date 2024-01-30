@@ -9,9 +9,37 @@
 long int print_l_i(long int number)
 {
 	char buffer[20];
-	sprintf(buffer, "%lu", number);
-	
-	return (20);
+	long int length = 0, count = 0, isnegative = 0, i;
+	char temporarybuffer;
+
+	if (number < 0)
+	{
+		isnegative = 1;
+		number = -number;
+	}
+
+	do {
+		buffer[length++] = number % 10 + '0';
+		number = number / 10;
+
+	} while (number > 0);
+	if (length > 10)
+	{
+		return (-1);
+	}
+	if (isnegative)
+	{
+		buffer[length++] = '-';
+	}
+	for (i = 0; i < length / 2; i++)
+	{
+		temporarybuffer = buffer[i];
+		buffer[i] = buffer[length - i - 1];
+		buffer[length - i - 1] = temporarybuffer;
+	}
+	buffer[length++] = '\0';
+	count += write(1, buffer, length);
+	return (count);
 }
 
 
@@ -93,6 +121,7 @@ long int print_l_x(long int hexadecimal_number)
 		buffer[length - m - 1] = tmp;
 	}
 
+	buffer[length++] = '\0';
 	return (write(1, buffer, _strlen(buffer)));
 }
 
@@ -138,6 +167,7 @@ long int _printf_l_X(long int hexadecimal_number)
 		buffer[length - m - 1] = tmp;
 	}
 
+	buffer[length++] = '\0';
 	return (write(1, buffer, _strlen(buffer)));
 }
 
