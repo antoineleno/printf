@@ -10,6 +10,7 @@ int prt_b(char *buffer, va_list list_of_argument)
 {
 	unsigned int number = va_arg(list_of_argument, unsigned int);
 	unsigned int temp;
+	unsigned int i, j;
 	unsigned int length = 0;
 
 	if (number == 0)
@@ -26,7 +27,7 @@ int prt_b(char *buffer, va_list list_of_argument)
 	}
 
 	
-	for (unsigned int i = 0, j = length - 1; i < j; i++, j--)
+	for (i = 0, j = length - 1; i < j; i++, j--)
 	{
 		temp = buffer[i];
 		buffer[i] = buffer[j];
