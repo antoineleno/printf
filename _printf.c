@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					break;
+					return (-1);
 				}
 			}
 		}
