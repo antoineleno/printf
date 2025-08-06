@@ -25,7 +25,6 @@ This `_printf` function handles output conversion specifiers similar to the C `p
 
 - `main.h`: Header file with function prototypes
 - `*.c`: Source files containing core logic
-- `tests/`: Optional folder for main.c test files (not submitted)
 
 ## Compilation
 
